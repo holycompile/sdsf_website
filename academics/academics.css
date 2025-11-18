@@ -1,125 +1,901 @@
-/* ============================================
-   GLOBAL RESET (Scoped only to academics page)
-   ============================================ */
-.page-content * {
+/* ===== GENERAL ===== */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-.page-content {
+/* ===== Shared Header Overrides ===== */
+/* .navbar .university-logo,
+.navbar .dept-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #ffffff;
+  border: 1px solid #e4e8f0;
+  padding: 4px;
+}
+
+.navbar .university-logo {
+  margin-right: 12px;
+}
+
+.navbar .dept-logo {
+  margin-left: 12px;
+}
+
+body {
   background: #f6f7fb;
   color: #222;
   line-height: 1.6;
+} */
+
+/* ===== Navbar ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background: #ffffff;
+    border-bottom: 3px solid #4a68ff;
+    transition: box-shadow 0.3s ease;
 }
 
-
-/* ============================================
-   HERO SECTION
-   ============================================ */
-.page-content .academics-hero {
-  background: linear-gradient(to bottom, #ffffff, #f1f3f6);
-  text-align: center;
-  padding: 4rem 6rem;
-}
-
-.page-content .academics-hero h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1b1b1b;
-  margin-bottom: 0.5rem;
-}
-
-.page-content .academics-hero h3 {
-  font-size: 1.3rem;
-  color: #4a68ff;
-  margin-bottom: 1.2rem;
-}
-
-.page-content .academics-hero p {
-  color: #444;
-  max-width: 750px;
-  margin: 0 auto;
-  font-size: 1rem;
-}
-
-
-/* ============================================
-   COURSES SECTION
-   ============================================ */
-.page-content .courses-section {
+.navbar-left {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 3rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-right{
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.dept-logo {
+  height: 60px;
+  width: 60px;
+  background-color: #ddd;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+.university-logo {
+  height: 80px;
+  width: 80px;
+  background-color: #ddd;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.title h1 {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.title p {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4rem;
+  margin-left: 4rem;   /* adjust this value */
+  margin-right: auto;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff0000;
+}
+
+.search-bar {
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+/* ===== HERO SECTION ===== */
+.academics-hero-banner {
+  position: relative;
+  padding: 5rem 6rem;
+  margin-bottom: 2rem;
+  border-radius: 28px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("academics-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  text-align: center;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.academics-hero-banner .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(74, 104, 255, 0.6), rgba(15, 23, 42, 0.75));
+  mix-blend-mode: multiply;
+}
+
+.hero-title {
+  position: relative;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: 0.4rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  z-index: 1;
+}
+
+/* ===== ACADEMIC OPTIONS SECTION ===== */
+.academic-options-section {
   padding: 4rem 6rem;
   background: #fff;
 }
 
-.page-content .course-left {
-  flex: 1;
-}
-
-.page-content .course-left h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.academic-options-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
   color: #1b1b1b;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
-.page-content .course-left p {
-  margin-bottom: 1.5rem;
-  color: #555;
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
 }
 
-.page-content .course-list {
-  list-style: none;
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.page-content .course-list li {
-  font-size: 1.05rem;
-  color: #333;
+.option-card {
+  background: #ffffff;
+  border: 2px solid #e8eaf0;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.option-card:hover {
+  transform: translateY(-8px);
+  border-color: #4a68ff;
+  box-shadow: 0 8px 24px rgba(74, 104, 255, 0.15);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.option-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1b1b1b;
   margin-bottom: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  transition: 0.3s;
 }
 
-.page-content .course-list li:hover {
-  transform: translateX(6px);
+.option-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.card-link {
   color: #4a68ff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.3s;
+  display: inline-block;
 }
 
-
-/* ============================================
-   RIGHT IMAGE
-   ============================================ */
-.page-content .course-right img {
-  width: 450px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  object-fit: cover;
+.card-link:hover {
+  color: #3a58ef;
+  transform: translateX(4px);
 }
 
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-/* ============================================
-   FOOTER
-   ============================================ */
-.page-content .footer {
+  .academics-hero-banner {
+    padding: 4rem 3rem;
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .academics-hero-banner {
+    padding: 3rem 1.5rem;
+    min-height: 280px;
+  }
+
+  .academic-options-section {
+    padding: 3rem 2rem;
+  }
+
+  .academic-options-section h2 {
+    font-size: 2rem;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    letter-spacing: 0.2rem;
+  }
+}
+
+/* ===== FOOTER ===== */
+.footer {
   text-align: center;
   padding: 2rem;
   background: #f3f4f8;
 }
 
-.page-content .back-top {
+.back-top {
   color: #4a68ff;
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
 }
 
-.page-content .back-top:hover {
+.back-top:hover {
   text-decoration: underline;
+}
+.academics-hero-banner {
+  position: relative;
+  width: 100%;
+  height: 420px; }
+
+  /* Your Shutterstock image here */
+ /* Image container */
+.hover-image-box {
+  width: 450px;           /* you can change */
+  height: 280px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Image default style */
+.hover-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 1.8s ease;   /* smooth zoom */
+}
+
+/* Zoom on hover */
+.hover-image-box:hover img {
+  transform: scale(1.25);   /* zoom in */
+}
+
+/* Full Hero Image Box */
+.academics-hero-box {
+  width: 100%;
+  height: 400px;           /* adjust height as needed */
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  margin: 20px auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* FULL image coverage */
+.academics-hero-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* covers entire box perfectly */
+  transform: scale(1);
+  transition: transform 2.2s ease;
+}
+
+/* Zoom on hover */
+.academics-hero-box:hover img {
+  transform: scale(1.18);
+}
+
+/* Center Text on Image */
+.academics-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: white;
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6);
+
+  opacity: 0;
+  animation: fadeInText 1.5s ease forwards;
+}
+
+/* Title Animation */
+@keyframes fadeInText {
+  0% {
+      opacity: 0;
+      transform: translate(-50%, -45%);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+  }
+}
+/* Hidden box initially */
+.ordinances-box {
+    width: 80%;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    display: none;
+    animation: fadeIn 0.6s ease;
+}
+
+.ordinances-box h2 {
+    color: #003366;
+    margin-top: 20px;
+}
+
+.ordinances-box ul {
+    margin-left: 20px;
+    line-height: 28px;
+    font-size: 17px;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+#ordinances-section {
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+#aicte-section {
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+#brochure-section {
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+#programmes-section {
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+#academic-projects-section {
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.section-title {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: #003366;
+  border-left: 4px solid #003366;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.styled-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.styled-list li {
+  background: #f4f7fb;
+  border-left: 4px solid #0055aa;
+  margin: 10px 0;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.styled-list li:hover {
+  background: #e9f1fc;
+  transition: 0.3s;
+}
+
+#ordinances-section {
+  display: none; /* keep hidden until clicked */
+  margin-top: 20px;
+  grid-column: 1 / -1; /* spans full width */
+}
+
+#aicte-section {
+  display: none; /* keep hidden until clicked */
+  margin-top: 20px;
+  grid-column: 1 / -1; /* spans full width */
+}
+
+#brochure-section {
+  display: none; /* keep hidden until clicked */
+  margin-top: 20px;
+  grid-column: 1 / -1; /* spans full width */
+}
+
+#programmes-section {
+  display: none; /* keep hidden until clicked */
+  margin-top: 20px;
+  grid-column: 1 / -1; /* spans full width */
+}
+
+#academic-projects-section {
+  display: none; /* keep hidden until clicked */
+  margin-top: 20px;
+  grid-column: 1 / -1; /* spans full width */
+}
+/* Main Box */
+.ordinances-box {
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+  margin-top: 30px;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 26px;
+  margin: 20px 0 15px;
+  color: #003366;
+  border-left: 4px solid #003366;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+/* List Styling */
+.styled-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.styled-list li {
+  background: #f5f7fb;
+  border-left: 4px solid #0056b3;
+  margin: 12px 0;
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+/* Hover Pop Effect */
+.styled-list li:hover {
+  transform: scale(1.03);
+  background: #eaf2ff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  border-left-color: #003366;
+}
+
+/* Link styling inside ordinances list */
+.styled-list li a {
+  color: #0056b3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.styled-list li a:hover {
+  color: #003366;
+  text-decoration: underline;
+}
+
+/* --- Premium Modern Notice Board --- */
+.ordinances-box {
+  display: none;
+  background: linear-gradient(145deg, rgba(255,255,255,0.75), rgba(245,245,255,0.55));
+  backdrop-filter: blur(14px);
+  border-radius: 26px;
+  padding: 45px;
+  margin-top: 20px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+  animation: fadePop 0.6s ease-out forwards;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+/* Section Title */
+.ordinances-box .section-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #0f0f0f;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ordinances-box .section-title::before {
+  content: "";
+  width: 8px;
+  height: 28px;
+  background: linear-gradient(180deg, #0057ff, #30a8ff);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,87,255,0.5);
+}
+
+/* Modern Animated List Items */
+.styled-list li {
+  list-style: none;
+  margin-bottom: 16px;
+  padding: 18px 20px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  border: 1px solid rgba(220,220,255,0.7);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+  opacity: 0;
+  transform: translateY(25px) scale(0.96);
+  animation: listPop 0.7s forwards cubic-bezier(.16,.84,.44,1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Accent Bar */
+.styled-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #0057ff, #38b6ff, #88e0ff);
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: 0.35s ease;
+}
+
+/* List hover */
+.styled-list li:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.16);
+  background: #ffffff;
+}
+
+.styled-list li:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Links */
+.styled-list a {
+  color: #0057ff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15.5px;
+}
+
+.styled-list a:hover {
+  text-decoration: underline;
+}
+
+/* Staggered Delays */
+.styled-list li:nth-child(1) { animation-delay: 0.10s; }
+.styled-list li:nth-child(2) { animation-delay: 0.25s; }
+.styled-list li:nth-child(3) { animation-delay: 0.40s; }
+.styled-list li:nth-child(4) { animation-delay: 0.55s; }
+.styled-list li:nth-child(5) { animation-delay: 0.70s; }
+.styled-list li:nth-child(6) { animation-delay: 0.85s; }
+.styled-list li:nth-child(7) { animation-delay: 1.00s; }
+.styled-list li:nth-child(8) { animation-delay: 1.15s; }
+
+/* --- Animations --- */
+@keyframes fadePop {
+  0% { opacity: 0; transform: translateY(30px) scale(0.97); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes listPop {
+  0% { opacity: 0; transform: translateY(25px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ===============================
+   ACADEMIC CALENDAR - FULL CSS
+   Paste inside academics.css
+   =============================== */
+
+.calendar-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px 48px 60px;
+    border-radius: 28px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+    overflow-x: auto;
+}
+
+.calendar-header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #004d99;
+    padding-bottom: 10px;
+}
+
+.calendar-header h2 {
+    font-size: 2.5em;
+    color: #004d99;
+    margin: 0;
+}
+
+.calendar-header p {
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Summary Table */
+.term-summary {
+    float: right;
+    width: 300px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.term-summary th,
+.term-summary td {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    text-align: left;
+}
+
+.term-summary th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.term-summary tr:first-child th {
+    background-color: #004d99;
+    color: white;
+    text-align: center;
+}
+
+/* Calendar Grid Layout */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: 210px minmax(320px, 1.1fr) minmax(420px, 1.6fr) minmax(220px, 0.9fr);
+    border: 1px solid #e0e6f0;
+    border-radius: 24px;
+    overflow: hidden;
+    clear: both;
+}
+
+.grid-header {
+    background-color: #004d99;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 5px;
+}
+
+.grid-month-cell {
+    background-color: #eef3fb;
+    font-weight: 700;
+    text-align: center;
+    padding: 18px 12px;
+    border-bottom: 1px solid #e0e6f0;
+    border-right: 1px solid #e0e6f0;
+}
+
+/* Date Grid */
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 16px 12px 18px;
+    gap: 6px 4px;
+    background: #ffffff;
+    border-right: 1px solid #e0e6f0;
+    border-bottom: 1px solid #e0e6f0;
+}
+
+.date-header {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.date-cell {
+    text-align: center;
+    padding: 6px 0;
+    font-size: 0.85em;
+    border-radius: 10px;
+}
+
+.calendar-events,
+.public-holidays {
+    padding: 20px 22px;
+    font-size: 0.92em;
+    line-height: 1.6;
+    border-bottom: 1px solid #e0e6f0;
+}
+
+.calendar-events {
+    background: #f8fbff;
+}
+
+.public-holidays {
+    background: #fff9f7;
+    border-left: 1px solid #ffe2d1;
+}
+
+/* COLORS & LABELS */
+.unlisted {
+    background-color: white;
+}
+
+.weekend {
+    background-color: #d1e3f8;
+}
+
+.exam-day {
+    background-color: #ffcc00;
+}
+
+.term-holiday {
+    background-color: #c90000;
+    color: white;
+}
+
+.public-holiday {
+    background-color: #990000;
+    color: white;
+}
+
+.prof-dev {
+    background-color: #008000;
+    color: white;
+}
+
+.prev-next-month {
+    color: #aaa;
+}
+
+/* Legend */
+.legend {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.color-box {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #555;
+    margin-right: 8px;
+}
+
+/* Optional spacing fix */
+#calendar-section-custom {
+    padding: 0;
+}
+
+@media (max-width: 1200px) {
+    .calendar-grid {
+        grid-template-columns: 1fr;
+        border-radius: 18px;
+    }
+
+    .grid-month-cell,
+    .date-grid,
+    .calendar-events,
+    .public-holidays {
+        border-right: none;
+        border-bottom: 1px solid #e0e6f0;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        padding: 30px 20px 40px;
+    }
+
+    .term-summary {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .date-grid {
+        padding: 12px 6px 14px;
+    }
+}
+
+#calendar-section-custom.ordinances-box {
+    width: 100%;
+    max-width: 1320px;
+    margin: 30px auto 50px;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border: none;
 }
