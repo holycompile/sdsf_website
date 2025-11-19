@@ -1,35 +1,9 @@
 /* ===== GENERAL ===== */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
-
-/* ===== Shared Header Overrides ===== */
-/* .navbar .university-logo,
-.navbar .dept-logo {
-  width: 72px;
-  height: 72px;
-  border-radius: 12px;
-  object-fit: contain;
-  background: #ffffff;
-  border: 1px solid #e4e8f0;
-  padding: 4px;
-}
-
-.navbar .university-logo {
-  margin-right: 12px;
-}
-
-.navbar .dept-logo {
-  margin-left: 12px;
-}
-
-body {
-  background: #f6f7fb;
-  color: #222;
-  line-height: 1.6;
 } */
 
 /* ===== Navbar ===== */
