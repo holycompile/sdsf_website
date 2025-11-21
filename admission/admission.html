@@ -1,4 +1,4 @@
-<!--Code contributed by Alivia Hossain, SDSF AI/DS,Sem 1-->
+<!--Code Contributed by Alivia Hossain, SDSF AI/DS Sem 1-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,23 +13,22 @@
 
 <body id="top">
 
-        <!-- ===== Header / Navbar ===== -->
-       
-
-                    <div id="header"></div>
-            <script>
-            fetch("../header.html")
-            .then(res => res.text())
-            .then(data => document.getElementById("header").innerHTML = data);
-            </script>
+    <div id="header"></div>
+    <script>
+        fetch("../header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+    </script>
 
 
     <section class="admission-hero">
-        <div class="hero-content">
-            <h2>Admissions Open 2025</h2>
-            <h3>Start your journey into Data Science and Forecasting with SDSF.</h3>
-            <p>We invite ambitious students who are ready to explore, innovate, and transform data into actionable insights.
-                Our programs are designed to prepare leaders of tomorrow in AI, ML, and Predictive Analytics.</p>
+        <div class="hero-text-content">
+            <div class="hero-content">
+                <h2>Admissions Open 2025</h2>
+                <h3 class="hero-subtitle">Start your journey into Data Science and Forecasting with SDSF.</h3>
+                <p class="hero-intro-text">We invite ambitious students who are ready to explore, innovate, and transform data into actionable insights.
+                    Our programs are designed to prepare leaders of tomorrow in AI, ML, and Predictive Analytics.</p>
+            </div>
         </div>
     </section>
 

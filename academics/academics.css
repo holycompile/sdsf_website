@@ -1,9 +1,10 @@
+/*Code edited by Alivia Hossain, SDSF AI/DS, Sem 1*/
 /* ===== GENERAL ===== */
 /* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 } */
 
 /* ===== Navbar ===== */
@@ -18,607 +19,348 @@
 }
 
 .navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .navbar-right{
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }
 
 .dept-logo {
-  height: 60px;
-  width: 60px;
-  background-color: #ddd;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-left: 10px;
+    height: 60px;
+    width: 60px;
+    background-color: #ddd;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-left: 10px;
 }
 
 .university-logo {
-  height: 80px;
-  width: 80px;
-  background-color: #ddd;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-right: 10px;
+    height: 80px;
+    width: 80px;
+    background-color: #ddd;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 10px;
 }
 
 .title h1 {
-  font-size: 1.3rem;
-  color: #333;
+    font-size: 1.3rem;
+    color: #333;
 }
 
 .title p {
-  font-size: 0.85rem;
-  color: #666;
+    font-size: 0.85rem;
+    color: #666;
 }
 
 .nav-links {
-  display: flex;
-  gap: 4rem;
-  margin-left: 4rem;   /* adjust this value */
-  margin-right: auto;
+    display: flex;
+    gap: 4rem;
+    margin-left: 4rem;
+    margin-right: auto;
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #ff0000;
+    color: #ff0000;
 }
 
 .search-bar {
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
 
 /* ===== HERO SECTION ===== */
-.academics-hero-banner {
-  position: relative;
-  padding: 5rem 6rem;
-  margin-bottom: 2rem;
-  border-radius: 28px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("academics-hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  text-align: center;
-  min-height: 360px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.academics-hero-box {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    margin: 20px auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
 
-.academics-hero-banner .overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(74, 104, 255, 0.6), rgba(15, 23, 42, 0.75));
-  mix-blend-mode: multiply;
+.academics-hero-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
 }
 
-.hero-title {
-  position: relative;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  letter-spacing: 0.4rem;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 700;
-  z-index: 1;
+.academics-hero-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
 }
 
-/* ===== ACADEMIC OPTIONS SECTION ===== */
+/* Text Container */
+.academics-hero-box .hero-text-content {
+    position: relative;
+    z-index: 3;
+    max-width: 80%;
+    padding: 20px;
+}
+
+/* Keyframe Animation for Text Appearance */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Hero Heading (Apply Animation) */
+.academics-title {
+    color: white;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0.5rem;
+    
+    /* Animation Application */
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.3s;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #ffeb3b; /* Accent color */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    
+    /* Animation Application */
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.6s;
+}
+
+/* New Intro Text (Apply Animation) */
+.hero-intro-text {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    
+    /* Animation Application */
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.9s;
+}
+
+/* ===== ACADEMIC OPTIONS SECTION===== */
 .academic-options-section {
-  padding: 4rem 6rem;
-  background: #fff;
+    padding: 4rem 6rem;
+    background: #fff;
 }
 
 .academic-options-section h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1b1b1b;
-  text-align: center;
-  margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1b1b1b;
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
-  text-align: center;
-  color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
 }
 
 .options-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .option-card {
-  background: #ffffff;
-  border: 2px solid #e8eaf0;
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: #ffffff;
+    border: 2px solid #e8eaf0;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .option-card:hover {
-  transform: translateY(-8px);
-  border-color: #4a68ff;
-  box-shadow: 0 8px 24px rgba(74, 104, 255, 0.15);
+    transform: translateY(-8px);
+    border-color: #4a68ff;
+    box-shadow: 0 8px 24px rgba(74, 104, 255, 0.15);
 }
 
 .card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  display: block;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
 }
 
 .option-card h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #1b1b1b;
-  margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1b1b1b;
+    margin-bottom: 0.8rem;
 }
 
 .option-card p {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 1.2rem;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
 }
 
 .card-link {
-  color: #4a68ff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: 0.3s;
-  display: inline-block;
+    color: #4a68ff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    display: inline-block;
 }
 
 .card-link:hover {
-  color: #3a58ef;
-  transform: translateX(4px);
+    color: #3a58ef;
+    transform: translateX(4px);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1024px) {
-  .options-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
-  .academics-hero-banner {
-    padding: 4rem 3rem;
-    border-radius: 22px;
-  }
-}
+/* ===== HIDDEN BOXES===== */
 
-@media (max-width: 768px) {
-  .academics-hero-banner {
-    padding: 3rem 1.5rem;
-    min-height: 280px;
-  }
-
-  .academic-options-section {
-    padding: 3rem 2rem;
-  }
-
-  .academic-options-section h2 {
-    font-size: 2rem;
-  }
-
-  .options-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .hero-title {
-    letter-spacing: 0.2rem;
-  }
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  text-align: center;
-  padding: 2rem;
-  background: #f3f4f8;
-}
-
-.back-top {
-  color: #4a68ff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.back-top:hover {
-  text-decoration: underline;
-}
-.academics-hero-banner {
-  position: relative;
-  width: 100%;
-  height: 420px; }
-
-  /* Your Shutterstock image here */
- /* Image container */
-.hover-image-box {
-  width: 450px;           /* you can change */
-  height: 280px;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-/* Image default style */
-.hover-image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1);
-  transition: transform 1.8s ease;   /* smooth zoom */
-}
-
-/* Zoom on hover */
-.hover-image-box:hover img {
-  transform: scale(1.25);   /* zoom in */
-}
-
-/* Full Hero Image Box */
-.academics-hero-box {
-  width: 100%;
-  height: 400px;           /* adjust height as needed */
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  margin: 20px auto;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* FULL image coverage */
-.academics-hero-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;        /* covers entire box perfectly */
-  transform: scale(1);
-  transition: transform 2.2s ease;
-}
-
-/* Zoom on hover */
-.academics-hero-box:hover img {
-  transform: scale(1.18);
-}
-
-/* Center Text on Image */
-.academics-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  color: white;
-  font-size: 60px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-
-  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6);
-
-  opacity: 0;
-  animation: fadeInText 1.5s ease forwards;
-}
-
-/* Title Animation */
-@keyframes fadeInText {
-  0% {
-      opacity: 0;
-      transform: translate(-50%, -45%);
-  }
-  100% {
-      opacity: 1;
-      transform: translate(-50%, -50%);
-  }
-}
-/* Hidden box initially */
+/* Main Box */
 .ordinances-box {
     width: 80%;
     margin: 40px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    background: linear-gradient(145deg, rgba(255,255,255,0.75), rgba(245,245,255,0.55));
+    backdrop-filter: blur(14px);
+    border-radius: 26px;
+    padding: 45px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+    animation: fadePop 0.6s ease-out forwards;
+    border: 1px solid rgba(255,255,255,0.5);
     display: none;
-    animation: fadeIn 0.6s ease;
-}
-
-.ordinances-box h2 {
-    color: #003366;
-    margin-top: 20px;
-}
-
-.ordinances-box ul {
-    margin-left: 20px;
-    line-height: 28px;
-    font-size: 17px;
-}
-
-/* Fade Animation */
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-#ordinances-section {
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 40px auto;
-  font-family: "Poppins", sans-serif;
-}
-
-#aicte-section {
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 40px auto;
-  font-family: "Poppins", sans-serif;
-}
-
-#brochure-section {
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 40px auto;
-  font-family: "Poppins", sans-serif;
-}
-
-#programmes-section {
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 40px auto;
-  font-family: "Poppins", sans-serif;
-}
-
-#academic-projects-section {
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 40px auto;
-  font-family: "Poppins", sans-serif;
-}
-
-.section-title {
-  font-size: 26px;
-  margin-bottom: 12px;
-  color: #003366;
-  border-left: 4px solid #003366;
-  padding-left: 10px;
-  font-weight: 600;
-}
-
-.styled-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 30px;
-}
-
-.styled-list li {
-  background: #f4f7fb;
-  border-left: 4px solid #0055aa;
-  margin: 10px 0;
-  padding: 12px 16px;
-  border-radius: 6px;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.styled-list li:hover {
-  background: #e9f1fc;
-  transition: 0.3s;
-}
-
-#ordinances-section {
-  display: none; /* keep hidden until clicked */
-  margin-top: 20px;
-  grid-column: 1 / -1; /* spans full width */
-}
-
-#aicte-section {
-  display: none; /* keep hidden until clicked */
-  margin-top: 20px;
-  grid-column: 1 / -1; /* spans full width */
-}
-
-#brochure-section {
-  display: none; /* keep hidden until clicked */
-  margin-top: 20px;
-  grid-column: 1 / -1; /* spans full width */
-}
-
-#programmes-section {
-  display: none; /* keep hidden until clicked */
-  margin-top: 20px;
-  grid-column: 1 / -1; /* spans full width */
-}
-
-#academic-projects-section {
-  display: none; /* keep hidden until clicked */
-  margin-top: 20px;
-  grid-column: 1 / -1; /* spans full width */
-}
-/* Main Box */
-.ordinances-box {
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-  font-family: "Poppins", sans-serif;
-  margin-top: 30px;
-}
-
-/* Section Title */
-.section-title {
-  font-size: 26px;
-  margin: 20px 0 15px;
-  color: #003366;
-  border-left: 4px solid #003366;
-  padding-left: 10px;
-  font-weight: 600;
-}
-
-/* List Styling */
-.styled-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 30px;
-}
-
-.styled-list li {
-  background: #f5f7fb;
-  border-left: 4px solid #0056b3;
-  margin: 12px 0;
-  padding: 14px 18px;
-  border-radius: 6px;
-  font-size: 16px;
-  transition: all 0.25s ease-in-out;
-  cursor: pointer;
-}
-
-/* Hover Pop Effect */
-.styled-list li:hover {
-  transform: scale(1.03);
-  background: #eaf2ff;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-  border-left-color: #003366;
-}
-
-/* Link styling inside ordinances list */
-.styled-list li a {
-  color: #0056b3;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.styled-list li a:hover {
-  color: #003366;
-  text-decoration: underline;
-}
-
-/* --- Premium Modern Notice Board --- */
-.ordinances-box {
-  display: none;
-  background: linear-gradient(145deg, rgba(255,255,255,0.75), rgba(245,245,255,0.55));
-  backdrop-filter: blur(14px);
-  border-radius: 26px;
-  padding: 45px;
-  margin-top: 20px;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
-  animation: fadePop 0.6s ease-out forwards;
-  border: 1px solid rgba(255,255,255,0.5);
+    
+    grid-column: 1 / -1; 
 }
 
 /* Section Title */
 .ordinances-box .section-title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 18px;
-  color: #0f0f0f;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #0f0f0f;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: none;
+    padding-left: 0;
 }
 
 .ordinances-box .section-title::before {
-  content: "";
-  width: 8px;
-  height: 28px;
-  background: linear-gradient(180deg, #0057ff, #30a8ff);
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0,87,255,0.5);
+    content: "";
+    width: 8px;
+    height: 28px;
+    background: linear-gradient(180deg, #0057ff, #30a8ff);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,87,255,0.5);
+}
+
+/* List Styling */
+.styled-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
 }
 
 /* Modern Animated List Items */
 .styled-list li {
-  list-style: none;
-  margin-bottom: 16px;
-  padding: 18px 20px;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(12px);
-  border-radius: 14px;
-  border: 1px solid rgba(220,220,255,0.7);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.10);
-  opacity: 0;
-  transform: translateY(25px) scale(0.96);
-  animation: listPop 0.7s forwards cubic-bezier(.16,.84,.44,1);
-  position: relative;
-  overflow: hidden;
+    list-style: none;
+    margin-bottom: 16px;
+    padding: 18px 20px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    border: 1px solid rgba(220,220,255,0.7);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+    animation: listPop 0.7s forwards cubic-bezier(.16,.84,.44,1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 /* Animated Accent Bar */
 .styled-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(180deg, #0057ff, #38b6ff, #88e0ff);
-  border-radius: 6px;
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: 0.35s ease;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #0057ff, #38b6ff, #88e0ff);
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: 0.35s ease;
 }
 
 /* List hover */
 .styled-list li:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.16);
-  background: #ffffff;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.16);
+    background: #ffffff;
 }
 
 .styled-list li:hover::before {
-  opacity: 1;
-  transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Links */
 .styled-list a {
-  color: #0057ff;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 15.5px;
+    color: #0057ff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15.5px;
 }
 
 .styled-list a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-/* Staggered Delays */
+/* Staggered Delays - Used by JS, but kept here for reference */
 .styled-list li:nth-child(1) { animation-delay: 0.10s; }
 .styled-list li:nth-child(2) { animation-delay: 0.25s; }
 .styled-list li:nth-child(3) { animation-delay: 0.40s; }
@@ -628,21 +370,21 @@
 .styled-list li:nth-child(7) { animation-delay: 1.00s; }
 .styled-list li:nth-child(8) { animation-delay: 1.15s; }
 
+
 /* --- Animations --- */
 @keyframes fadePop {
-  0% { opacity: 0; transform: translateY(30px) scale(0.97); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+    0% { opacity: 0; transform: translateY(30px) scale(0.97); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes listPop {
-  0% { opacity: 0; transform: translateY(25px) scale(0.96); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+    0% { opacity: 0; transform: translateY(25px) scale(0.96); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* ===============================
-   ACADEMIC CALENDAR - FULL CSS
-   Paste inside academics.css
-   =============================== */
+    ACADEMIC CALENDAR - FULL CSS 
+    =============================== */
 
 .calendar-container {
     width: 100%;
@@ -872,4 +614,57 @@
     background: transparent;
     box-shadow: none;
     border: none;
+}
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .options-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .academics-hero-box {
+        padding: 4rem 3rem;
+        border-radius: 22px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .academics-hero-box {
+        padding: 3rem 1.5rem;
+        min-height: 280px;
+        height: auto;
+    }
+
+    .academic-options-section {
+        padding: 3rem 2rem;
+    }
+
+    .academic-options-section h2 {
+        font-size: 2rem;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: #f3f4f8;
+}
+
+.back-top {
+    color: #4a68ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.back-top:hover {
+    text-decoration: underline;
 }

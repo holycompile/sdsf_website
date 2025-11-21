@@ -1,6 +1,6 @@
 /* ===== Code contributed by Alivia Hossain, SDSF AI/DS, Sem 1 ===== */
 /* ===== GENERAL ===== */
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,10 +27,10 @@ p {
 
 section {
     padding: 4rem 6rem;
-} */
+}
 
 /* Animations for scroll reveal */
-/* .reveal {
+.reveal {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -39,8 +39,7 @@ section {
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
-} 
-*/
+}
 
 
 /* ===== Navbar ===== */
@@ -55,76 +54,95 @@ section {
 }
 
 .navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .navbar-right{
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }
 
 .dept-logo {
-  height: 60px;
-  width: 60px;
-  background-color: #ddd;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-left: 10px;
+    height: 60px;
+    width: 60px;
+    background-color: #ddd;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-left: 10px;
 }
 
 .university-logo {
-  height: 80px;
-  width: 80px;
-  background-color: #ddd;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-right: 10px;
+    height: 80px;
+    width: 80px;
+    background-color: #ddd;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 10px;
 }
 
 .title h1 {
-  font-size: 1.3rem;
-  color: #333;
+    font-size: 1.3rem;
+    color: #333;
 }
 
 .title p {
-  font-size: 0.85rem;
-  color: #666;
+    font-size: 0.85rem;
+    color: #666;
 }
 
 .nav-links {
-  display: flex;
-  gap: 4rem;
-  margin-left: 4rem;
-  margin-right: auto;
+    display: flex;
+    gap: 4rem;
+    margin-left: 4rem;
+    margin-right: auto;
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #ff0000;
+    color: #ff0000;
 }
 
 .search-bar {
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
 /* ===== HERO SECTION ===== */
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .admission-hero {
     text-align: center;
-    padding: 7rem 2rem;
+    padding: 4rem 2rem;
     position: relative;
     color: #fff;
     overflow: hidden;
+    margin: 20px auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .admission-hero::before {
@@ -137,7 +155,6 @@ section {
     background-image: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    animation: kenBurns 30s infinite alternate ease-in-out;
     z-index: 1;
 }
 
@@ -148,13 +165,20 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 20, 40, 0.65);
+    background: rgba(10, 20, 40, 0.7);
     z-index: 2;
 }
 
-@keyframes kenBurns {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
+.hero-text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero-content {
@@ -162,30 +186,47 @@ section {
     z-index: 3;
     max-width: 900px;
     margin: 0 auto;
+    animation: none;
 }
 
 .admission-hero h2 {
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
-    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0.5rem;
     color: #fff;
+
+    
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.3s;
 }
 
-.admission-hero h3 {
-    font-size: 1.5rem;
-    color: #d1d9ff;
-    margin-bottom: 1.2rem;
+.admission-hero h3,
+.admission-hero .hero-subtitle {
+    font-size: clamp(1.2rem, 3vw, 2rem);
     font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #ffeb3b;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.6s;
 }
 
-.admission-hero p {
+.admission-hero p,
+.admission-hero .hero-intro-text {
     color: #f0f3ff;
     max-width: 750px;
     margin: 0 auto;
-    font-size: 1.05rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.9s;
 }
 
-/* ===== PROGRAMS ===== */
+/* ===== PROGRAMS  ===== */
 .programs-section {
     padding: 4rem 6rem;
     text-align: center;
@@ -329,7 +370,7 @@ section {
 }
 
 .info-table-container {
-    overflow-x: auto; 
+    overflow-x: auto;
     margin-bottom: 2.5rem;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -338,7 +379,7 @@ section {
 .info-table-container table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 900px; 
+    min-width: 900px;
     background: #ffffff;
     border-radius: 10px;
     overflow: hidden;
@@ -448,7 +489,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(248, 249, 251, 0.88); 
+    background-color: rgba(248, 249, 251, 0.88);
     z-index: -1;
 }
 
@@ -459,7 +500,7 @@ section {
     padding-bottom: 0.75rem;
     color: #222;
     font-weight: 700;
-    z-index: 2; 
+    z-index: 2;
 }
 .process-section h2::after {
     content: '';
@@ -486,8 +527,8 @@ section {
 
 .step {
     background: #fff;
-    border-radius: 12px; 
-    border-top: 5px solid #4a68ff; 
+    border-radius: 12px;
+    border-top: 5px solid #4a68ff;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     padding: 2.2rem 1.8rem;
     text-align: center;
@@ -504,7 +545,7 @@ section {
 
 .step h3 {
     color: #333;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
     font-size: 1.4rem;
     font-weight: 600;
     display: flex;
@@ -547,7 +588,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.88); 
+    background-color: rgba(255, 255, 255, 0.88);
     z-index: -1;
 }
 
@@ -603,7 +644,7 @@ section {
 
 .date-card h4 {
     color: #333;
-    margin-bottom: 0.8rem; 
+    margin-bottom: 0.8rem;
     font-size: 1.4rem;
     font-weight: 600;
 }
@@ -627,7 +668,7 @@ section {
     border-radius: 12px;
     margin: 3rem auto;
     max-width: 1200px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .apply-section::before {
@@ -650,7 +691,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(74, 104, 255, 0.75); 
+    background: rgba(74, 104, 255, 0.75);
     z-index: -1;
 }
 
@@ -659,14 +700,14 @@ section {
     background-image: url('https://images.unsplash.com/photo-1569653402334-2e98fbaa80ee?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* CUET specific image */
 }
 .cuet-apply-section::after {
-    background: rgba(220, 53, 69, 0.75); 
+    background: rgba(220, 53, 69, 0.75);
 }
 
 .non-cuet-apply-section::before {
     background-image: url('https://plus.unsplash.com/premium_photo-1680726504154-67c15bc7e593?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Non-CUET specific image */
 }
 .non-cuet-apply-section::after {
-    background: rgba(74, 104, 255, 0.75); 
+    background: rgba(74, 104, 255, 0.75);
 }
 
 
@@ -687,8 +728,8 @@ section {
 
 .apply-section p {
     text-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    max-width: 700px; 
-    margin-bottom: 1.8rem; 
+    max-width: 700px;
+    margin-bottom: 1.8rem;
     font-size: 1.1rem;
     color: #f0f3ff;
 }
@@ -698,8 +739,8 @@ section {
     background: #fff;
     color: #4a68ff;
     font-weight: 600;
-    padding: 1.2rem 2.5rem; 
-    border-radius: 8px; 
+    padding: 1.2rem 2.5rem;
+    border-radius: 8px;
     margin-top: 1rem;
     text-decoration: none;
     border: 2px solid #fff;
@@ -713,7 +754,7 @@ section {
 .apply-btn:hover {
     background: transparent;
     color: #fff;
-    transform: translateY(-5px) scale(1.03); 
+    transform: translateY(-5px) scale(1.03);
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
@@ -726,7 +767,7 @@ section {
 }
 
 .non-cuet-apply-section .apply-btn {
-    color: #4a68ff; 
+    color: #4a68ff;
 }
 .non-cuet-apply-section .apply-btn:hover {
     color: #fff;
@@ -765,7 +806,7 @@ section {
         padding: 3rem 4rem;
     }
     .program-card {
-        flex-basis: 45%; 
+        flex-basis: 45%;
     }
 
     .step,
@@ -833,11 +874,17 @@ section {
     }
 
     .admission-hero h2 {
-        font-size: 2.2rem;
+        font-size: clamp(2rem, 5vw, 2.5rem);
     }
 
-    .admission-hero h3 {
-        font-size: 1.2rem;
+    .admission-hero h3,
+    .admission-hero .hero-subtitle {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    .admission-hero p,
+    .admission-hero .hero-intro-text {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
     }
 
     .info-table-container th,
@@ -874,26 +921,29 @@ section {
     .navbar {
         padding: 0.8rem;
     }
-    .title-text h1 {
+    .title h1 {
         font-size: 1.1rem;
     }
-    .title-text p {
+    .title p {
         font-size: 0.8rem;
     }
-    .clg-logo {
+    .dept-logo {
         height: 45px;
         width: auto;
     }
     .nav-links {
         justify-content: center;
     }
+
     .admission-hero h2 {
         font-size: 1.8rem;
     }
-    .admission-hero h3 {
+    .admission-hero h3,
+    .admission-hero .hero-subtitle {
         font-size: 1rem;
     }
-    .admission-hero p {
+    .admission-hero p,
+    .admission-hero .hero-intro-text {
         font-size: 0.9rem;
     }
 }
