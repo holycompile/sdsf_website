@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IQAC | SDSF — Final</title>
+
+  <!-- Your site CSS (keeps global nav styles) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- IQAC-specific styles (final restored Version B + accessibility fixes) -->
+  <link rel="stylesheet" href="iqac.css">
+</head>
+<body id="top">
+
+  <!-- Skip link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- top bar / navbar (your style.css handles layout) -->
+  <div class="top-bar" aria-hidden="true"></div>
+
+  <header class="navbar" role="banner">
+    <div class="navbar-left">
+      <img src="sdsf logo.jpg" alt="SDSF Logo" class="dept-logo">
+      <div class="title"><h1>SDSF</h1><p>School of Data Science & Forecasting</p></div>
+    </div>
+
+    <nav class="nav-links" aria-label="Main navigation" role="navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="iqac.html" class="active" aria-current="page">IQAC</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right" role="search" aria-label="Site search">
+      <input type="search" class="search-bar" placeholder="Search..." aria-label="Search site">
+      <button class="login-btn">Log in ↗</button>
+    </div>
+  </header>
+
+  <!-- HERO (animated particles + dark overlay + CTA) -->
+  <section class="iqac-hero" id="hero" role="region" aria-labelledby="hero-title">
+    <!-- stable direct Unsplash image for hero background -->
+    <img class="hero-image"
+         src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2000&q=80"
+         alt="Abstract blue digital network background" loading="lazy">
+
+    <!-- canvas for particles -->
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+    <!-- glass overlay with content -->
+    <div class="hero-glass" role="region" aria-label="IQAC hero">
+      <div class="hero-inner" style="z-index:3;">
+        <div class="hero-left">
+         <div class="hero-text-box">
+  <h1 id="hero-title">Internal Quality Assurance Cell</h1>
+  <p class="lead">Sustaining institutional excellence through structured, data-driven quality processes and stakeholder engagement.</p>
+</div>
+
+          <div class="hero-ctas" role="group" aria-label="Hero actions">
+            <a class="btn primary" href="#mission" aria-label="Explore mission">Explore IQAC</a>
+            <a class="btn ghost" href="#reports" aria-label="View reports">Reports</a>
+            <a class="btn highlight" href="feedback.html" aria-label="Provide stakeholder feedback">Stakeholder Feedback ★</a>
+          </div>
+
+          <div class="hero-meta" aria-hidden="true">
+            <span>📅 Last Meeting: <strong>15 Oct 2025</strong></span>
+            <span>📁 AQAR 2024–25</span>
+          </div>
+        </div>
+
+        <div class="hero-right" aria-hidden="true">
+          <div class="floating-icons" aria-hidden="true">
+            <span class="fi" aria-hidden="true" title="analytics">📊</span>
+            <span class="fi" aria-hidden="true" title="strategy">🧭</span>
+            <span class="fi" aria-hidden="true" title="ai">🧠</span>
+            <span class="fi" aria-hidden="true" title="settings">⚙️</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content" class="iqac-main" role="main">
+
+    <!-- MISSION (Vision / Objectives / Functions) -->
+    <section id="mission" class="glass-card fade-up" aria-labelledby="mission-title">
+      <h2 id="mission-title">IQAC Mission</h2>
+      <p class="muted">Promoting continuous quality enhancement and institutional excellence through effective processes, data and participation.</p>
+
+      <div class="mission-grid">
+        <div class="mission-card" role="article" aria-labelledby="vision-title">
+          <h3 id="vision-title">🌟 Vision</h3>
+          <p>To embed a sustainable culture of quality that promotes academic excellence, research vitality and administrative efficiency.</p>
+        </div>
+
+        <div class="mission-card" role="article" aria-labelledby="objectives-title">
+          <h3 id="objectives-title">🎯 Core Objectives</h3>
+          <ul class="mission-list">
+            <li>Design and implement internal quality systems.</li>
+            <li>Promote learner-centric pedagogies and assessment.</li>
+            <li>Collect & analyse stakeholder feedback for improvement.</li>
+            <li>Document best practices & support accreditation readiness.</li>
+            <li>Organize capacity-building & quality workshops.</li>
+          </ul>
+        </div>
+
+        <div class="mission-card" role="article" aria-labelledby="functions-title">
+          <h3 id="functions-title">⚙️ Functions & Strategies</h3>
+          <ul class="mission-list">
+            <li>Coordinate quality initiatives across departments.</li>
+            <li>Collect, manage and interpret institutional data.</li>
+            <li>Prepare AQAR and other accreditation documents.</li>
+            <li>Conduct audits, workshops and stakeholder consultations.</li>
+            <li>Monitor action plans and completion rates.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTERS -->
+    <section class="glass-card counters fade-up" aria-label="Key statistics">
+      <div class="counter" role="img" aria-label="Workshops">
+        <div class="num" data-target="18" aria-hidden="false">0</div>
+        <div class="label">Workshops (last 2 years)</div>
+      </div>
+      <div class="counter" role="img" aria-label="Indicators">
+        <div class="num" data-target="62" aria-hidden="false">0</div>
+        <div class="label">AQAR Indicators Tracked</div>
+      </div>
+      <div class="counter" role="img" aria-label="Completion">
+        <div class="num" data-target="92" aria-hidden="false">0</div>
+        <div class="label">Action Completion (%)</div>
+      </div>
+    </section>
+
+   <!-- FUNCTIONS / CARDS -->
+<section class="glass-card fade-up" aria-labelledby="functions-h">
+  <h2 id="functions-h">Key Functions</h2>
+
+  <div class="card-grid" role="list">
+
+    <!-- Existing Cards -->
+    <article class="info-card" role="listitem">
+      <div class="icon" aria-hidden="true">📑</div>
+      <h4>AQAR Preparation</h4>
+      <p>Compile and submit Annual Quality Assurance Reports for NAAC compliance.</p>
+      <a class="card-link" href="#" aria-label="Download AQAR template">Download template</a>
+    </article>
+
+    <article class="info-card" role="listitem">
+      <div class="icon" aria-hidden="true">🧭</div>
+      <h4>Benchmarking</h4>
+      <p>Define measurable quality indicators for programs and services.</p>
+      <a class="card-link" href="#" aria-label="View KPIs">View indicators</a>
+    </article>
+
+    <article class="info-card" role="listitem">
+      <div class="icon" aria-hidden="true">🛠️</div>
+      <h4>Capacity Building</h4>
+      <p>Organize faculty development, workshops and seminars.</p>
+      <a class="card-link" href="#" aria-label="See events">Upcoming events</a>
+    </article>
+
+    <!-- NEW CARDS -->
+    <article class="info-card" role="listitem">
+      <div class="icon" aria-hidden="true">🎓</div>
+      <h4>Student Portal</h4>
+      <p>Centralized academic resources, performance tracking and support for students.</p>
+      <a class="card-link" href="#" aria-label="Open student portal">Open Portal</a>
+    </article>
+
+    <article class="info-card" role="listitem">
+      <div class="icon" aria-hidden="true">👪</div>
+      <h4>Parent Support</h4>
+      <p>Facilitates communication, progress updates, and academic insights for parents.</p>
+      <a class="card-link" href="#" aria-label="Parent dashboard">View Support</a>
+    </article>
+
+    <article class="info-card" role="listitem">
+      <div class="icon" aria-hidden="true">📅</div>
+      <h4>Event Portal</h4>
+      <p>Showcases workshops, seminars, quality initiatives and institutional events.</p>
+      <a class="card-link" href="#" aria-label="Event portal">Explore Events</a>
+    </article>
+
+  </div>
+</section>
+    <section class="glass-card wow-timeline fade-up" aria-labelledby="timeline-h">
+  <h2 id="timeline-h">Quality Initiatives — Timeline</h2>
+
+  <div class="timeline-track">
+
+    <!-- ITEM 1 -->
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">13–14 Jul 2024</div>
+        <h4>NBA Training Programme</h4>
+        <p>Training for faculty on program outcomes and documentation.</p>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">26–30 Aug 2024</div>
+        <h4>Academic & Administrative Audit</h4>
+        <p>Comprehensive audits across departments and admin units.</p>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">02 Mar 2025</div>
+        <h4>Student Feedback Drive</h4>
+        <p>Institution-wide feedback collection and action planning.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- CORE COMMITTEE TABLE -->
+    <section id="committee" class="glass-card fade-up" aria-labelledby="committee-h">
+      <h2 id="committee-h">IQAC Core Committee</h2>
+      <p class="muted">Committee composition — editable table for future updates.</p>
+
+      <div class="table-wrapper" role="region" aria-label="IQAC committee table">
+        <table class="committee-table" aria-describedby="committee-desc">
+          <caption id="committee-desc" class="sr-only">IQAC Core Committee Members</caption>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Designation / Role</th>
+              <th scope="col">Department / Stakeholder Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Dr. Ananya Rao</td><td>Chairperson</td><td>Head, SDSF</td></tr>
+            <tr><td>Dr. Vikram Desai</td><td>IQAC Coordinator</td><td>Data Science</td></tr>
+            <tr><td>Ms. Neha Kapoor</td><td>Administrative Officer</td><td>Administration</td></tr>
+            <tr><td>Mr. Rajesh Sharma</td><td>Industry Expert</td><td>External Member</td></tr>
+            <tr><td>Ms. Riya Malhotra</td><td>Student Representative</td><td>BSc Data Science</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- REPORTS -->
+    <section id="reports" class="glass-card fade-up" aria-labelledby="reports-h">
+      <h2 id="reports-h">Reports & Documents</h2>
+      <ul class="report-list" role="list">
+        <li role="listitem"><a href="#" aria-label="Download AQAR 2023-24">AQAR 2023–24 (PDF)</a></li>
+        <li role="listitem"><a href="#" aria-label="Meeting minutes Oct 2025">Meeting Minutes — Oct 2025</a></li>
+        <li role="listitem"><a href="#" aria-label="Action Taken Report 2024">Action Taken Report (2024)</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (left unchanged - local to IQAC page only) -->
+  <footer class="footer dark-footer" role="contentinfo">
+    <div class="foot-inner">
+      <small>© <span id="year"></span> SDSF • IQAC</small>
+      <a href="#top" class="back-top">↑ Back to top</a>
+    </div>
+  </footer>
+
+  <!-- interactions -->
+  <script src="iqac.js"></script>
+</body>
+</html>
