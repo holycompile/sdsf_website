@@ -1,7 +1,82 @@
+/*Code edited by Alivia Hossain, SDSF AI/DS, Sem 1*/
 /* iqac.css — Final Corrected Version (Dark Glass, Spacious, Hero B)
    Accessibility & contrast updates applied */
 
 /* Palette (contrast-tuned) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background: #ffffff;
+    border-bottom: 3px solid #4a68ff;
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.dept-logo {
+    height: 60px;
+    width: 60px;
+    background-color: #ddd;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.university-logo {
+    height: 80px;
+    width: 80px;
+    background-color: #ddd;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.title h1 {
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.title p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.nav-links {
+    display: flex;
+    gap: 4rem;
+    margin-left: 4rem;
+    margin-right: auto;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff0000;
+}
+
+.search-bar {
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
 :root{
   --bg-900:#061127;
   --bg-800:#0b1524;
